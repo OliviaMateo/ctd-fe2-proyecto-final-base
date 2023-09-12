@@ -1,4 +1,4 @@
-import { INoticias } from "./fakeRest";
+import { INoticias } from "../fakeRest";
 export interface INoticiasNormalizadas {
     id: number;
     titulo: string;
@@ -8,4 +8,5 @@ export interface INoticiasNormalizadas {
     imagen: string;
     descripcionCorta?: string;
 }
+
 export interface INoticiasAPI extends INoticias { }

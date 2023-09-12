@@ -1,4 +1,4 @@
-import { INoticiasNormalizadas } from "./contracts";
+import { INoticiasNormalizadas } from "../hooks/contracts";
 import {
     TarjetaNoticia,
     ImagenTarjetaNoticia,
@@ -6,7 +6,7 @@ import {
     FechaTarjetaNoticia,
     DescripcionTarjetaNoticia,
     BotonLectura,
-} from "./styled";
+} from "../styled";
 
 export interface ICardNoticias {
     noticias: INoticiasNormalizadas[];

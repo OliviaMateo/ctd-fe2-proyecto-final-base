@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
-import { obtenerNoticias } from "./fakeRest";
-import { ContenedorNoticias, ListaNoticias, TituloNoticias } from "./styled";
-import { INoticiasNormalizadas } from "./contracts";
-import { toFront } from "./normalize";
-import ModalSubscripcion from "./modalSubscripcion";
-import ModalPremium from "./modalPremium";
-import CardNoticias from "./cardNoticias";
+import { obtenerNoticias } from "../fakeRest";
+import { ContenedorNoticias, ListaNoticias, TituloNoticias } from "../styled";
+import { INoticiasNormalizadas } from "../hooks/contracts";
+import { toFront } from "../hooks/normalize";
+import ModalSubscripcion from "./modal/ModalSub";
+import ModalPremium from "./modal/ModalPremium";
+import CardNoticias from "./CardNoticias";
 
 // Implemente el principio SOLID de responsabilidad única, de esta manera se puede liberar al componente "Noticias" de ciertas tareas que no le corresponden.
 // En un primer momento, separe las funciones encargadas de normalizar las noticias recibidas: capitalizeWords, calculateMinutes y noticias.mapper.
@@ -57,5 +57,6 @@ const Noticias = () => {
     </ContenedorNoticias>
   );
 };
+
 export default Noticias;
 

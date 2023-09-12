@@ -3,34 +3,34 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import quoteReducer from "./features/quote/citaSlice";
+import citaSlice from "./features/quote/citaSlice";
 import { RootState } from "./app/store";
 
 // Creamos el custom render
 const customRender = (
-    ui: React.ReactElement,
-    {
+  ui: React.ReactElement,
+  {
     preloadedState,
     store = configureStore({
-        reducer: {
-        quote: quoteReducer,
-        },
-        preloadedState,
+      reducer: {
+        cita: citaSlice,
+      },
+      preloadedState,
     }),
     ...renderOptions
-    } : {
+  }: {
     preloadedState?: RootState;
     store?: ReturnType<typeof configureStore>;
-    } = {}
+  } = {}
 ) => {
-    const Wrapper: React.FC<{
+  const Wrapper: React.FC<{
     children: React.ReactNode;
-    }> = ({ children }) => <Provider store={store}>{children}</Provider>;
+  }> = ({ children }) => <Provider store={store}>{children}</Provider>;
 
-    render(ui, {
+  render(ui, {
     wrapper: Wrapper,
     ...renderOptions,
-    });
+  });
 };
 
 // re-exportamos todo
